@@ -1,0 +1,96 @@
+{
+  "title": "MIDI Filter",
+  "children": [
+    {
+      "title": "Overview",
+      "lines": [
+        "Lets through one",
+        "key range. Put one",
+        "on every slot that",
+        "shares a keyboard.",
+        "Each plays its own",
+        "range."
+      ]
+    },
+    {
+      "title": "Range",
+      "lines": [
+        "Low / High: lowest",
+        "and highest note",
+        "let through. Both",
+        "are included.",
+        "Names as on Move:",
+        "C3 = MIDI 60.",
+        "Most keyboards",
+        "call that C4."
+      ]
+    },
+    {
+      "title": "Learn",
+      "lines": [
+        "Press Learn Low or",
+        "Learn High, then a",
+        "key. That key sets",
+        "the note and is not",
+        "played here.",
+        "Press again to",
+        "cancel. Ends after",
+        "10 seconds."
+      ]
+    },
+    {
+      "title": "Output",
+      "lines": [
+        "schwung only: notes",
+        "play this slot.",
+        "move only: notes go",
+        "to the stock Move",
+        "track on Move",
+        "Channel instead.",
+        "both: the slot and",
+        "the Move track.",
+        "Move Channel must",
+        "differ from the",
+        "slot's Recv Ch.",
+        "No Move track may",
+        "listen on the",
+        "keyboard channel."
+      ]
+    },
+    {
+      "title": "Transpose",
+      "lines": [
+        "Shifts notes by",
+        "whole octaves, -10",
+        "to +10. Applies to",
+        "the slot and Move.",
+        "The range filter",
+        "uses the key you",
+        "press. Notes that",
+        "leave 0-127 are",
+        "dropped."
+      ]
+    },
+    {
+      "title": "Sustain",
+      "lines": [
+        "Off: the sustain",
+        "pedal (CC 64) is",
+        "not passed on."
+      ]
+    },
+    {
+      "title": "Status",
+      "lines": [
+        "ok: working.",
+        "learn lo/hi: next",
+        "key is learned.",
+        "ch clash: Move",
+        "Channel = Recv Ch",
+        "or Recv Ch = All.",
+        "no move: host has",
+        "no Move output."
+      ]
+    }
+  ]
+}

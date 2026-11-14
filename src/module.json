@@ -1,0 +1,44 @@
+{
+  "api_version": 1,
+  "id": "midifilter",
+  "name": "MIDI Filter",
+  "abbrev": "MF",
+  "version": "0.2.0",
+  "description": "Lets through one key range, transposed by octaves, to this slot's synth, a stock Move track, or both. One per slot to split a keyboard.",
+  "author": "pdubucq",
+  "builtin": false,
+  "capabilities": {
+    "chainable": true,
+    "component_type": "midi_fx"
+  },
+  "ui_hierarchy": {
+    "levels": {
+      "root": {
+        "name": "MIDI Filter",
+        "params": [
+          { "key": "learn_low", "short_name": "L LRN", "access": "write", "options_as_string": true },
+          { "key": "learn_high", "short_name": "H LRN", "access": "write", "options_as_string": true },
+          { "key": "low_note", "short_name": "LOW" },
+          { "key": "high_note", "short_name": "HIGH" },
+          { "key": "output", "short_name": "OUT", "options_as_string": true },
+          { "key": "move_channel", "short_name": "M CH", "options_as_string": true },
+          { "key": "transpose", "short_name": "OCT", "step": 1 },
+          { "key": "sustain", "short_name": "SUS", "options_as_string": true },
+          { "key": "status", "short_name": "STAT", "access": "read", "live": true, "options_as_string": true }
+        ],
+        "knobs": ["learn_low", "learn_high", "low_note", "high_note", "output", "move_channel", "transpose", "sustain", "status"]
+      }
+    }
+  },
+  "chain_params": [
+    { "key": "learn_low", "name": "Learn Low", "short_name": "L LRN", "type": "enum", "options": ["-", "Learn"], "options_as_string": true, "access": "write" },
+    { "key": "learn_high", "name": "Learn High", "short_name": "H LRN", "type": "enum", "options": ["-", "Learn"], "options_as_string": true, "access": "write" },
+    { "key": "low_note", "name": "Lowest Note", "short_name": "LOW", "type": "int", "min": 0, "max": 127, "default": 0 },
+    { "key": "high_note", "name": "Highest Note", "short_name": "HIGH", "type": "int", "min": 0, "max": 127, "default": 127 },
+    { "key": "output", "name": "Output", "short_name": "OUT", "type": "enum", "options": ["schwung only", "move only", "both"], "options_as_string": true, "default": "schwung only" },
+    { "key": "move_channel", "name": "Move Channel", "short_name": "M CH", "type": "enum", "options": ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"], "options_as_string": true, "default": "2" },
+    { "key": "transpose", "name": "Transpose Octave", "short_name": "OCT", "type": "int", "min": -10, "max": 10, "step": 1, "default": 0 },
+    { "key": "sustain", "name": "Sustain", "short_name": "SUS", "type": "enum", "options": ["off", "on"], "options_as_string": true, "default": "on" },
+    { "key": "status", "name": "Status", "short_name": "STAT", "type": "enum", "options": ["ok", "learn lo", "learn hi", "ch clash", "no move"], "options_as_string": true, "access": "read", "live": true }
+  ]
+}
